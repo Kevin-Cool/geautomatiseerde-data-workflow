@@ -13,4 +13,6 @@ py analyse_data.py
 # 4 create reports
 echo "Generating reports"
 py report_gen.py
-
+# 5 auto update
+git add .
+git commit -m "automated update"
