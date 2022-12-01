@@ -1,2 +1,11 @@
-# geautomatiseerde-data-workflow
- Proof-of-concept geautomatiseerde data workflow
+# Opdracht Proof-of-concept geautomatiseerde data workflow
+## 1 Verzamelen ruwe data
+dit gebeurt in get_Data.sh
+## 2 Data transformeren
+dit gebeurt in clean_data.sh
+## 3 Data analyseren
+dit gebeurt in analyse_data.py
+## 4 Rapport genereren
+dit gebeurt in Report_gen.py
+## 5 Gehele workflow automatiseren
+dit gebeurt in runtime.sh
