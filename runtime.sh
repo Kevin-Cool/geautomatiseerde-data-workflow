@@ -16,3 +16,4 @@ py report_gen.py
 # 5 auto update
 git add .
 git commit -m "automated update"
+git push origin master
