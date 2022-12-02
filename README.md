@@ -8,4 +8,5 @@ dit gebeurt in analyse_data.py
 ## 4 Rapport genereren
 dit gebeurt in Report_gen.py
 ## 5 Gehele workflow automatiseren
+Automaties ale vorige stapen uitvoeren en de nieuwe rapporten online zeten op github
 dit gebeurt in runtime.sh
