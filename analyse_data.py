@@ -8,6 +8,9 @@ import seaborn as sns                               # Advanced data visualisatio
 
 import matplotlib.ticker as ticker
 
+import warnings
+warnings.filterwarnings("ignore", message="Numerical issues were encountered ")
+
 def main():
     # get clean data file
     df  = pd.read_csv('C:\\Users\\kevin\\Documents\\school\\2022-2023\\semester 1\\3 Linux for Data Scientists\\Proof-of-concept geautomatiseerde data workflow\\cleandata\\cleandata.csv')
