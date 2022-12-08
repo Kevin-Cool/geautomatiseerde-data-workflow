@@ -28,9 +28,11 @@ def main():
     ax.xaxis.set_major_locator(ticker.MultipleLocator(base=1))
     plt.legend(title='Air quality', loc='upper left', labels=['outside', 'inside'])
     plt.ylabel('Air quality')
-    plt.show()
     fig = plot.get_figure()
     fig.savefig('analysedata/separate.png')  
+    plt.cla()
+    plt.clf()
+    
     #  create plot for inside/outside combined
     plot2 = sns.lineplot(data=df_daily, x="timestamp", y="value")
     ax = plt.gca()
@@ -39,6 +41,8 @@ def main():
     #plt.show()
     fig = plot2.get_figure()
     fig.savefig('analysedata/combined.png')  
+    plt.cla()
+    plt.clf()
 
 
 if __name__ == "__main__":
