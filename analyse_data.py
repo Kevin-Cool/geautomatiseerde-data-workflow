@@ -9,7 +9,7 @@ import seaborn as sns                               # Advanced data visualisatio
 import matplotlib.ticker as ticker
 
 import warnings
-warnings.filterwarnings("ignore", message="FutureWarning: ")
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 def main():
     # get clean data file
