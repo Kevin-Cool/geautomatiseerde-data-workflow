@@ -27,7 +27,7 @@ def main():
     plt.ylabel('Particulates in μm/m³')
     plt.xticks(rotation=30)
     fig = plot.get_figure()
-    fig.savefig('analysedata/saperate.png')  
+    fig.savefig('analysedata/separated.png')  
     plt.cla()
     plt.clf()
     
