@@ -8,11 +8,13 @@ bash clean_data.sh
 echo "Starting the venv"
 . env\\Scripts\\activate
 # 3 analyse data
-echo "Analysing the data"
-py analyse_data.py
+#echo "Analysing the data"
+#py analyse_data.py
 # 4 create reports
-echo "Generating reports"
-py report_gen.py
+#echo "Generating reports"
+#py report_gen.py
+echo "new report gen"
+py analyse_and_report_gen.py
 # 5 auto update
 git add .
 git commit -m "automated update"
