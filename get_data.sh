@@ -35,7 +35,7 @@ check_if_valid_directorie(){
 #
 
 # By default it wil use the same folder as the script is in
-directorie="./rawdata";
+directorie="/home/kevin/Documents/automate/rawdata";
 # The url of the API 
 URL="https://data.stad.gent/api/records/1.0/search/?dataset=api-luftdateninfo";
 
@@ -58,8 +58,7 @@ fi
 # If new dir was given use that one 
 if [ "$#" -eq "1" ]; then
     directorie=$1;
-    check_if_valid_directorie
 fi
-
+check_if_valid_directorie
 # Ghather the data and save it to the rawdata folder
 gather_raw_data;

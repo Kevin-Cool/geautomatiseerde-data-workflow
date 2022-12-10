@@ -151,13 +151,13 @@ temp() {
 #
 use_git="0";
 d1="0"
-d1d="./rawdata"
+d1d="/home/kevin/Documents/automate/rawdata"
 d2="0"
-d2d="./cleandata"
+d2d="/home/kevin/Documents/automate/cleandata"
 d3="0"
-d3d="./analysedata"
+d3d="/home/kevin/Documents/automate/analysedata"
 d4="0"
-d4d="./generatedreports"
+d4d="/home/kevin/Documents/automate/generatedreports"
 #
 # Command line parsing
 #

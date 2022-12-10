@@ -7,17 +7,19 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # The defoult directories used
-clean_data_dir = './cleandata'
-analysed_data_dir = './analysedata'
-report_data_dir = './generatedreports'
+clean_data_dir = '/home/kevin/Documents/automate/cleandata'
+analysed_data_dir = '/home/kevin/Documents/automate/analysedata'
+report_data_dir = '/home/kevin/Documents/automate/generatedreports'
 
 def pars_arguments(args):
     if(len(args) != 3):
         print(f'A wrong number of arguments wass passed, possible combinations: [0,3] \n nr of args reseaved: {len(args)}')
         quit()
+        
     global clean_data_dir
     global analysed_data_dir
     global report_data_dir
+    
     clean_data_dir = args[0]
     analysed_data_dir = args[1]
     report_data_dir = args[2]
