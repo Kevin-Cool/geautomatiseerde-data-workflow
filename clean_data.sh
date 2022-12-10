@@ -24,8 +24,8 @@ clean_data() {
 #
 
 # By default it wil use the same folder as the script is in
-rawdata_directorie=".\rawdata";
-cleandata_directorie=".\cleandata";
+rawdata_directorie="./rawdata";
+cleandata_directorie="./cleandata";
 
 
 #

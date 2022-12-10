@@ -21,7 +21,7 @@ gather_raw_data() {
 #
 
 # By default it wil use the same folder as the script is in
-directorie=".\rawdata";
+directorie="./rawdata";
 # The url of the API 
 URL="https://data.stad.gent/api/records/1.0/search/?dataset=api-luftdateninfo";
 

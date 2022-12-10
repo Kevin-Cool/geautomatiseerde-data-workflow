@@ -18,10 +18,10 @@ temp() {
     bash clean_data.sh
     # start the vevn for python
     echo "Starting the venv"
-    . env\\Scripts\\activate
+    #. env\\Scripts\\activate
     # 3 analyse data and create reports
     echo "new report gen"
-    py analyse_and_report_gen.py
+    python3 analyse_and_report_gen.py
     # 5 auto update
     git add .
     git commit -m "automated update"

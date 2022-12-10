@@ -1,11 +1,9 @@
 # Importing the necessary packages
-import numpy as np                                  # "Scientific computing"
 import pandas as pd                                 # Data Frame
 import matplotlib.pyplot as plt                     # Basic visualisation
 import seaborn as sns                               # Advanced data visualisation
-import matplotlib.ticker as ticker
-#import warnings
-#warnings.simplefilter(action='ignore', category=FutureWarning)
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 def combined(df_daily):
@@ -59,7 +57,8 @@ def simple_template(file,titel,intro,left_image,right_text):
 # Generate difrent reports
 if __name__ == "__main__":
     # get clean data file
-    df  = pd.read_csv('C:\\Users\\kevin\\Documents\\school\\2022-2023\\semester 1\\3 Linux for Data Scientists\\Proof-of-concept geautomatiseerde data workflow\\cleandata\\cleandata.csv')
+    df  = pd.read_csv('./cleandata/cleandata.csv')
+    #'C:\\Users\\kevin\\Documents\\school\\2022-2023\\semester 1\\3 Linux for Data Scientists\\Proof-of-concept geautomatiseerde data workflow\\cleandata\\cleandata.csv'
     
     # change the format of data to a more usefull format for graphs
     df['timestamp'] = pd.to_datetime(df['timestamp']).dt.normalize().astype('datetime64[ns]')
