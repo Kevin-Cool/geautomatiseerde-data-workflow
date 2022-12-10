@@ -32,8 +32,8 @@ cleandata_directorie="./cleandata";
 # Command line parsing
 #
 
-if [ "$#" -gt "1" ]; then
-    echo "Expected at most 1 argument, got $#" >&2;
+if [ "$#" -gt "2" ]; then
+    echo "Expected at most 2 argument, got $#" >&2;
     exit 2;
 fi
 
@@ -43,9 +43,10 @@ fi
 # Script proper
 #
 
-# If new dir was given use that one 
-if [ "$#" -eq "1" ]; then
-    directorie=$1;
+# If new dir was given use that ones
+if [ "$#" -eq "2" ]; then
+    rawdata_directorie=$1;
+    cleandata_directorie=$2;
 fi
 
 # Ghather the data and save it to the rawdata folder

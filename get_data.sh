@@ -12,9 +12,23 @@ set -o pipefail  # don't hide errors within pipes
 #
 
 gather_raw_data() {
-    curl -X GET $URL -H "Accept: application/json" -o "$directorie"/"rawdata-$(date +%Y%m%d-%H%M%S).json"
+    curl -X GET $URL -H "Accept: application/json" -o "$directorie"/"rawdata-$(date +%Y%m%d-%H%M%S).json";
 }
-
+check_if_valid_directorie(){
+    if [ -d "$directorie" ]; then
+        echo "$directorie is a directory.";
+    else
+        echo "$directorie does not exist, do you wish to create it (y/n)";
+        read create_dir
+        if [ "$create_dir" == "y" ]; then
+            mkdir "$directorie";
+            echo " the new directory has been successfully created:  $directorie";
+        else
+            echo " process stoped: no valid directorie was given"
+            exit 3;
+        fi
+    fi
+}
 
 #
 # Variables
@@ -44,6 +58,7 @@ fi
 # If new dir was given use that one 
 if [ "$#" -eq "1" ]; then
     directorie=$1;
+    check_if_valid_directorie
 fi
 
 # Ghather the data and save it to the rawdata folder
