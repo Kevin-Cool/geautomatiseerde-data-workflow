@@ -4,8 +4,8 @@ import pandas as pd                                 # Data Frame
 import matplotlib.pyplot as plt                     # Basic visualisation
 import seaborn as sns                               # Advanced data visualisation
 import matplotlib.ticker as ticker
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+#import warnings
+#warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 def combined(df_daily):
