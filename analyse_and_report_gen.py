@@ -50,7 +50,7 @@ def separate(df_daily_complex):
 def simple_template(file,titel,intro,left_image,right_text):
     with  open(f"generatedreports/{file}.md", "w") as md:
         md.write(f'# {titel}\n')
-        md.write(f'"PM10 and PM2.5 reference the size of particulates measured in micro meters. In European countries there is no level of particulates which is considered safe.\n\n [Source](https://en.wikipedia.org/wiki/Particulates)"\n')
+        md.write(f'PM10 and PM2.5 reference the size of particulates measured in micro meters. In European countries there is no level of particulates which is considered safe.\n[Source](https://en.wikipedia.org/wiki/Particulates) \n\n ')
         md.write(f'{intro}\n')
         md.write(f' <img src="{left_image}" alt="left graph" style="width:100%"> \n')
         md.write(f'{right_text} ')
