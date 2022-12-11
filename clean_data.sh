@@ -12,9 +12,6 @@ set -o pipefail  # don't hide errors within pipes
 #
 
 clean_data() {
-    # 1: -s to run the jq on the intire set, map(.records[]) will get all the record items from each file and combine them into one list
-    # 2: -s to run the jq on the intire set, .[] will open the list, unique will remove the individual duplicate items
-    # 3: -r will make sure the output is not alterd, ["value_type","value","timestamp","is_indoor","x","y"] this shows which fields from the json that will be cept
     jq -s 'map(.records[])' "$rawdata_directorie"/* | jq -s '.[] | unique' | jq -r '["value_type","value","timestamp","is_indoor","x","y"] , (.[] | [.fields.value_type, .fields.value, .fields.timestamp, .fields.is_indoor, .fields.location[0], .fields.location[1] ]) | @csv' > "$cleandata_directorie"/cleandata.csv
 }
 
@@ -23,7 +20,7 @@ clean_data() {
 # Variables
 #
 
-# By default it wil use the same folder as the script is in
+# By default it will use the same folder as the script is in
 rawdata_directorie="/home/kevin/Documents/automate/rawdata";
 cleandata_directorie="/home/kevin/Documents/automate/cleandata";
 
@@ -43,11 +40,15 @@ fi
 # Script proper
 #
 
-# If new dir was given use that ones
+# If new directory where given use those
 if [ "$#" -eq "2" ]; then
     rawdata_directorie=$1;
     cleandata_directorie=$2;
 fi
 
-# Ghather the data and save it to the rawdata folder
+# Gather the data and save it to the rawdata folder
+
+# echo current time for log file 
+echo "running clean_data.sh $(date +%Y%m%d-%H%M%S)"
+
 clean_data;
