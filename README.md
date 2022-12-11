@@ -14,7 +14,7 @@ Deze stap zal elke 12uur opnieuw data verzamelen en deze opslagen.
 Er is voor 12uur gekozen omdat de data dat de api terug geeft maar 2 keer per dag update
 
 ## 3 Data verwerken [runtime.sh](./runtime.sh)
-Deze file zal elke 24uur de ruwe data verwerken tot clean data [clean_data.sh](./clean_data.sh) en zal dan deze data analyseren en verwerken tot een raport [analyse_and_report_gen.py](./analyse_and_report_gen.py) 
+Deze file zal elke 24uur de ruwe data verwerken tot clean data ([clean_data.sh](./clean_data.sh)) en zal dan deze data analyseren en verwerken tot een raport ([analyse_and_report_gen.py](./analyse_and_report_gen.py))
 ### 3.1 Ruwe date verwerken tot clean data ([clean_data.sh](./clean_data.sh))
 dit script zal de ruwe data en de unique entries in een nieuw csv verwerken ([cleandata.csv](./cleandata/cleandata.csv))
 ### 3.1 Clean data verswerken tot raporten [analyse_and_report_gen.py](./analyse_and_report_gen.py) 
