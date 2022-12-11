@@ -1,5 +1,5 @@
 # Opdracht Proof-of-concept geautomatiseerde data workflow
-## 1 Setup (setup.sh)
+## 1 Setup (setup.sh)[../setup.sh]
 De setup word behandeld door setup.sh 
 *  Dit script zorcht er voor dat de nodige packages aanwezig zijn
 *  Het kijkt na of de folders aanwezig zijn en maakt en indien niet kan de gebruiker kiezn om deze aan te maken
