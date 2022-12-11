@@ -14,9 +14,9 @@ set -o pipefail # don't hide some errors in pipes
 
 temp() {
     # 2 clean the new raw data 
-    bash "$d0d/clean_data.sh" $d1d $d2d
+    bash "$d0d/clean_data.sh" "$d1d" "$d2d"
     # 3 analyse data and create reports
-    python3 "$d0d/analyse_and_report_gen.py" $d2d $d3d $d4d
+    python3 "$d0d/analyse_and_report_gen.py" "$d2d" "$d3d" "$d4d"
 }
 
 push_to_git(){

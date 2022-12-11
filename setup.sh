@@ -80,31 +80,29 @@ check_for_options() {
                 -git) use_git="1" 
                 shift ;;
                 -d1 | --dirraw) echo "Give the directory where raw data will be saved, this directory way not be used for any other files";
-                dir_change="1"
-                read d1d
-                shift ;;
+                    dir_change="1"
+                    read -r d1d
+                    shift ;;
                 -d2 | --dirclean) echo "Give the directory where cleaned data will be saved";
-                dir_change="1"
-                read d2d
-                shift ;;
+                    dir_change="1"
+                    read -r d2d
+                    shift ;;
                 -d3 | --diranalyse) echo "Give the directory where analysed data will be saved";
-                dir_change="1"
-                read d3d
-                shift ;;
+                    dir_change="1"
+                    read -r d3d
+                    shift ;;
                 -d4 | --dirreport) echo "Give the directory where generated reports will be saved";
-                dir_change="1"
-                read d4d
-                shift ;;
+                    dir_change="1"
+                    read -r d4d
+                    shift ;;
                 -d5 | --dirlogs) echo "Give the directory where generated logs will be saved";
-                dir_change="1"
-                read logd
-                shift ;;
+                    dir_change="1"
+                    read -r logd
+                    shift ;;
                 -h | -help) echo "the help function can not be used in combination with other options";
-                exit 0
-                shift ;;
+                    exit 0;;
                 *) echo "the given option: $1 , is not a recognised option please use -h or --help for more information on wat options are possible";
-                exit 0
-                shift ;;
+                    exit 0;;
             esac
         done
 
@@ -115,18 +113,18 @@ check_for_options() {
 
 check_all_directories(){
     echo "================== Checking if the directories exist =================="
-    check_if_valid_directorie $logd
-    check_if_valid_directorie $d1d
-    check_if_valid_directorie $d2d
-    check_if_valid_directorie $d3d
-    check_if_valid_directorie $d4d
+    check_if_valid_directorie "$logd"
+    check_if_valid_directorie "$d1d"
+    check_if_valid_directorie "$d2d"
+    check_if_valid_directorie "$d3d"
+    check_if_valid_directorie "$d4d"
 }
 check_if_valid_directorie(){
     if [ -d "$1" ]; then
         echo "$1 is a directory.";
     else
         echo "$1 does not exist, do you wish to create it (y/n)";
-        read create_dir
+        read -r create_dir
         if [ "$create_dir" == "y" ]; then
             mkdir "$1";
             echo " the new directory has been successfully created: $1";
@@ -149,9 +147,9 @@ check_if_execute_rights(){
 }
 create_cronjob(){
     echo "======================== Creating the cronjobs ========================";
-    if [[ "$(crontab -l | grep $1)" == *"$1"* ]]; then
+    if [[ "$(crontab -l | grep "$1")" == *"$1"* ]]; then
         echo "cronjob $1 already exists, replace it? (y/n)";
-        read replace_crontab
+        read -r replace_crontab
         if [ "$replace_crontab" == "y" ]; then
             crontab  -l | sed "/$1/d" | crontab -
             echo "the old cronjob was removed";

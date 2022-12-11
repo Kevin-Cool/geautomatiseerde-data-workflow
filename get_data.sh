@@ -12,7 +12,7 @@ set -o pipefail  # don't hide errors within pipes
 #
 
 gather_raw_data() {
-    curl -X GET $URL -H "Accept: application/json" -o "$directorie"/"rawdata-$(date +%Y%m%d-%H%M%S).json"
+    curl -X GET "$URL" -H "Accept: application/json" -o "$directorie"/"rawdata-$(date +%Y%m%d-%H%M%S).json"
 }
 #
 # Variables
